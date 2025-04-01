@@ -76,21 +76,21 @@
       font-size: 6vw;
       z-index: 2;
       background-color: rgba(0, 255, 0, 0.1);
-      padding: 1rem 2rem;
+      padding: 1rem;
       border: 2px dashed #00ff00;
       box-shadow: 0 0 8px #00ff00;
       animation: pulse 2s infinite;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      white-space: normal;
+      overflow-wrap: break-word;
+      max-width: 90vw;
     }
     @media (min-width: 768px) {
       .cta {
         font-size: 28px;
-        white-space: normal;
-        width: 80%;
+        max-width: none;
       }
     }
+
     @keyframes pulse {
       0% { transform: scale(1); box-shadow: 0 0 5px #00ff00; }
       50% { transform: scale(1.05); box-shadow: 0 0 15px #00ff00; }
@@ -101,7 +101,8 @@
       color: #00ff00;
       text-decoration: underline;
       font-weight: bold;
-      white-space: nowrap;
+      display: inline-block;
+      text-align: center;
     }
 
     .footer-note {
@@ -134,13 +135,13 @@
       position: absolute;
       top: 1rem;
       left: 1rem;
-      font-size: 5.8vw;
+      font-size: 2.8vw;
       color: rgba(0, 255, 0, 0.35);
       z-index: 1;
       font-family: monospace;
       text-align: left;
       line-height: 1.5;
-      animation: textBlink 1.5s infinite;
+      animation: textBlink 2.5s infinite;
     }
 
     @media (min-width: 768px) {
