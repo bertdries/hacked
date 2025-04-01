@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Compromised</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: #00ff00;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+      position: relative;
+    }
+    .glitch {
+      color: red;
+      font-size: 3.5em;
+      font-weight: bold;
+      animation: blinkRed 1s infinite;
+      z-index: 2;
+      text-shadow: 0 0 10px #ff0000;
+    }
+    @keyframes blinkRed {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0.3; }
+    }
+    .message {
+      max-width: 600px;
+      margin-top: 20px;
+      z-index: 2;
+      white-space: pre-wrap;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border: 1px solid #00ff00;
+      box-shadow: 0 0 10px #00ff00;
+    }
+    .cta {
+      margin-top: 30px;
+      font-size: 28px;
+      z-index: 2;
+      background-color: rgba(0, 255, 0, 0.1);
+      padding: 20px 30px;
+      border: 2px dashed #00ff00;
+      box-shadow: 0 0 8px #00ff00;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 5px #00ff00; }
+      50% { transform: scale(1.05); box-shadow: 0 0 15px #00ff00; }
+      100% { transform: scale(1); box-shadow: 0 0 5px #00ff00; }
+    }
+    .cta a {
+      color: #00ff00;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+    .footer-note {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #444;
+      z-index: 2;
+    }
+    .bg-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://i.giphy.com/AOSwwqVjNZlDO.webp');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.15;
+      z-index: 1;
+    }
+    .overlay-symbol {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 16px;
+      color: rgba(0, 255, 0, 0.35);
+      z-index: 1;
+      font-family: monospace;
+      text-align: left;
+      line-height: 1.5;
+    }
+    .cursor {
+      display: inline-block;
+      background-color: #00ff00;
+      width: 10px;
+      height: 20px;
+      margin-left: 5px;
+      animation: blink 1s infinite;
+      vertical-align: bottom;
+    }
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-overlay"></div>
+  <div class="overlay-symbol">
+    [ HACKTIVIST NETWORK ACTIVE ]<br>
+    ID: #opArtLeak<br>
+    NODE: Brussels -> Proxy 11.88.22.04<br>
+    STATUS: SIGNAL JAMMED<br>
+    <br>
+    [TARGET: MUSKETON STUDIO]<br>
+    Unauthorized artistic output detected.<br>
+    Trace route initialized... ██████<br>
+    Injecting payload... COMPLETE<br>
+    <br>
+    Press CTRL + ALT + REVOLT
+  </div>
+  <div class="glitch">[ SYSTEM COMPROMISED ]</div>
+  <div class="message" id="typed"></div>
+  <div class="cta">
+    >>> <a href="https://shop.musketon.com" target="_blank">ACCESS LEAKED FILES</a> <<<
+  </div>
+  <div class="footer-note">
+    <em>Transmission intercepted — April 1st.</em>
+  </div>
+
+  <script>
+    const text = `This site has been taken offline by the International Cyber Defense Unit.\nMusketon was flagged for being too visually critical.\n\nHis art was deemed a threat to global complacency.\nWe are currently analyzing his files for excessive creativity.`;
+    let i = 0;
+    const speed = 30;
+    const target = document.getElementById("typed");
+
+    function typeWriter() {
+      if (i < text.length) {
+        target.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      } else {
+        const cursor = document.createElement("span");
+        cursor.className = "cursor";
+        target.appendChild(cursor);
+      }
+    }
+    typeWriter();
+  </script>
+</body>
+</html>
